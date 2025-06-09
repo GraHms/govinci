@@ -211,6 +211,19 @@ Renderers are responsible for turning the abstract `Node` tree into real UI elem
 - Native iOS via `UIView`, `UILabel`, etc. (coming soon)
 - HTML (optional, for export and dev tools)
 
+## 🏗 Building the Android Module
+
+1. Install `gomobile` and initialize it:
+   ```bash
+   go install golang.org/x/mobile/cmd/gomobile@latest
+   gomobile init
+   ```
+2. Generate the Android library from the Go code:
+   ```bash
+   gomobile bind -target=android -tags govinci -o android/app/libs/govinci.aar ./
+   ```
+3. Open the `android/` folder in Android Studio and run the `app` module on a device or emulator.
+
 ---
 
 ## 🛠 Dev Experience
